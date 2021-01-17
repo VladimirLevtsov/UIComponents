@@ -89,10 +89,10 @@ public struct CustomNavigationView<T: View>: View {
             ZStack {
                 if vm.isRoot {
                     content
-                        .transition(AnyTransition.opacity.combined(with: .move(edge: .leading)))
                         .environmentObject(vm)
                 } else {
                     vm.currentScreen!.nextScreen
+                        
                         .environmentObject(vm)
                 }
             }
@@ -142,4 +142,3 @@ public struct CustomNavigationLink<Label, Destination> : View where Label : View
     }
     
 }
-
